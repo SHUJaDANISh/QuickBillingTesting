@@ -1,0 +1,6 @@
+@QuickBillingTesting_HostAddress = http://localhost:5221
+
+GET {{QuickBillingTesting_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
