@@ -27,4 +27,5 @@ RUN dotnet publish "./QuickBillingTesting.csproj" -c $BUILD_CONFIGURATION -o /ap
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS=http://*:${PORT}
 ENTRYPOINT ["dotnet", "QuickBillingTesting.dll"]
