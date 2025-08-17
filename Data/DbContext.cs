@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Microsoft.Extensions.Configuration;
+using Npgsql;
 using System.Data;
 
 namespace QuickBiilingTesting.Data
@@ -14,6 +15,6 @@ namespace QuickBiilingTesting.Data
             _connectionString = _configuration.GetConnectionString("DefaultConnection");
         }
 
-        public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
+        public IDbConnection CreateConnection() => new NpgsqlConnection(_connectionString);
     }
 }

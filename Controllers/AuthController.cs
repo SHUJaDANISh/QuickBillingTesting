@@ -2,6 +2,8 @@
 using QuickBiilingTesting.Models.Dto;
 using QuickBiilingTesting.Models.Responses;
 using QuickBiilingTesting.Services.Interfaces;
+using System;
+using System.Threading.Tasks;
 
 namespace QuickBiilingTesting.Controllers
 {
@@ -21,10 +23,7 @@ namespace QuickBiilingTesting.Controllers
         {
             var authResponse = await _authService.Login(loginDto);
             if (authResponse == null)
-            {
                 return Unauthorized("Invalid username or password");
-            }
-
             return Ok(authResponse);
         }
 
